@@ -117,7 +117,7 @@ const VideoGenerationPage = () => {
               }
               else {
                 return (
-                  <video controls className="w-full mt-8">
+                  <video key={video} controls className="w-full mt-8">
                     <source src={video}></source>
                   </video>
                 )

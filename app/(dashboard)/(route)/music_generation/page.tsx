@@ -123,7 +123,7 @@ const MusicGenerationPage = () => {
               }
               else {
                 return (
-                  <audio controls className="w-full mt-8">
+                  <audio key={music} controls className="w-full mt-8">
                     <source src={music}></source>
                   </audio>
                 )
