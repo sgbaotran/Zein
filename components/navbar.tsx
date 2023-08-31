@@ -1,18 +1,21 @@
-import { UserButton } from '@clerk/nextjs'
-import MobileSideBar from './mobile-sidebar'
+import { UserButton } from "@clerk/nextjs";
 
+import { MobileSidebar } from "@/components/mobile-sidebar";
+import { getApiLimit } from "@/lib/api-limit";
+import { checkSubscription } from "@/lib/subscription";
 
-function NavBar() {
-    return (
-        <div className='flex items-center p-4'>
-            <MobileSideBar />
+const Navbar = async () => {
+  const limitCount = await getApiLimit();
+  const isPro = await checkSubscription();
 
-            <div className='flex w-full justify-end'>
-                <UserButton afterSignOutUrl='/' />
-            </div>
-
-        </div >
-    )
+  return ( 
+    <div className="flex items-center p-4">
+      <MobileSidebar isPro={isPro} apiLimitCount={limitCount} />
+      <div className="flex w-full justify-end">
+        <UserButton afterSignOutUrl="/" />
+      </div>
+    </div>
+   );
 }
-
-export default NavBar
+ 
+export default Navbar;
