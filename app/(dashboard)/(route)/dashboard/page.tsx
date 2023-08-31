@@ -7,6 +7,8 @@ import { tools } from '@/app/constants'
 import { ArrowRight } from 'lucide-react'
 
 const DashboardPage = () => {
+  const router = useRouter()
+  
   /**
    * This is the piece code that will prenvent isMounted error  */
   const [isMounted, setIsMounted] = useState(false);
@@ -20,7 +22,6 @@ const DashboardPage = () => {
   }
 
 
-  const router = useRouter()
 
   return (
     <div className="pb-4">
