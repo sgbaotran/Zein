@@ -30,7 +30,7 @@ export async function GET() {
 
             return new NextResponse(JSON.stringify({ url: stripeSession.url }))
         }
-
+        console.log('enter create')
         const stripeSession = await stripe.checkout.sessions.create({
             success_url: settingsUrl,
             cancel_url: settingsUrl,
@@ -58,6 +58,7 @@ export async function GET() {
                 userId,
             },
         })
+        console.log('done create')
 
         return new NextResponse(JSON.stringify({ url: stripeSession.url }))
     } catch (error) {
