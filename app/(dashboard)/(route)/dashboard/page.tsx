@@ -2,15 +2,12 @@
 import { Card } from "@/components/ui/card"
 import { cn } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
 import { tools } from '@/app/constants'
 import { ArrowRight } from 'lucide-react'
 
 const DashboardPage = () => {
   const router = useRouter()
   
-
-
 
   return (
     <div className="pb-4">
