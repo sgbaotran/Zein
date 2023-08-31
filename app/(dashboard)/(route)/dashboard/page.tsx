@@ -9,17 +9,6 @@ import { ArrowRight } from 'lucide-react'
 const DashboardPage = () => {
   const router = useRouter()
   
-  /**
-   * This is the piece code that will prenvent isMounted error  */
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
 
 
 
